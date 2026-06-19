@@ -17,10 +17,11 @@ public class HelloController {
     }
 
     @PostMapping("/hello")
-    public String hello(@RequestParam String message, Model model) {
+    public String hello(@RequestParam String message, @RequestParam String message2, Model model) {
         System.out.println("hello呼ばれた");
 
         model.addAttribute("message", message);
+        model.addAttribute("message2", message2);
         return "result";
     }
 }
