@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.dto.Task;
 import com.example.demo.service.TaskService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,9 +24,9 @@ public class TaskController {
     }
 
     @PostMapping("/task")
-    public String addTask(@RequestParam String task) {
+    public String addTask(@RequestParam String title) {
 
-        taskService.addTask(task);
+        taskService.addTask(title);
 
         return "redirect:/";
     }

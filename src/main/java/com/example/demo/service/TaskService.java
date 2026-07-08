@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.dto.Task;
 import com.example.demo.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +15,12 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
 
-    public void addTask(String task) {
+    public void addTask(String title) {
+        Task task = new Task(title);
         taskRepository.save(task);
     }
 
-    public List<String> getAllTasks() {
+    public List<Task> getAllTasks() {
         return taskRepository.findAll();
     }
 }
