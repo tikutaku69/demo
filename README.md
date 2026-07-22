@@ -3,8 +3,10 @@
 ## バージョン
 - Java : 21.0.10
 - Maven : 3.9.14
+- Spring Boot : 4.1.0
+  - spring web
 - PostgreSQL : 18.4
-- pgAdmin 4 : 9.15
+  - pgAdmin 4 : 9.15
 
 ## 操作方法
 ### 起動方法
