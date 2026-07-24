@@ -14,8 +14,12 @@
 </form>
 
 <ul>
-    <li th:each="task : ${tasks}"
-        th:text="${task.title}">
+    <li th:each="task : ${tasks}">
+        <span th:text="${task.title}"></span>
+
+        <a th:href="@{/tasks/edit/{id}(id=${task.id})}">
+            編集
+        </a>
     </li>
 </ul>
 
