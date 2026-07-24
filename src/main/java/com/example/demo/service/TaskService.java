@@ -21,6 +21,13 @@ public class TaskService {
         taskRepository.save(task);
     }
 
+    public void updateTask(Long id, String title) {
+        Optional<Task> task = taskRepository.findById(id);
+        Task updateTask = task.get();  //ここでOptionalからTask型を取り出す
+        updateTask.setTitle(title);  //Task型だからsetTitleを呼べる
+        taskRepository.save(updateTask);
+    }
+
     public List<Task> getAllTasks() {
         return taskRepository.findAll();
     }

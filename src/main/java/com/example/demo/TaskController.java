@@ -43,4 +43,12 @@ public class TaskController {
 
         return "redirect:/";
     }
+
+    @PostMapping("/tasks/update")
+    public String updateTask(@RequestParam Long id, @RequestParam String title) {
+
+        taskService.updateTask(id, title);
+
+        return "redirect:/";
+    }
 }
